@@ -21,11 +21,17 @@ export default function Search() {
         fetchData(); 
     }, []);
 
+  const handleClick = (job: IJobs) => {
+        console.log("You should become a "+ job.title)
+    }
+
     return (
         <>
             <div>
                 {data.map((job) => (
-                    <div key={job.id}> 
+                    <div 
+                    key={job.id}
+                    onClick={() => handleClick(job)}> 
                         <h2>{job.title}</h2> 
                     </div>
                 ))}
